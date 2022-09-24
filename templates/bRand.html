@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail View</title>
+</head>
+<body>
+    <style type="text/css">
+        .post_block {
+
+        }
+        .post_block h1 {
+            text-align: center;
+            color: #242b2e;
+        }
+        .post_block h5 {
+            text-align: center;
+            color: #242b2e;
+        }
+    </style>
+    <div class="brand">
+        {% for brand in brands %}
+            <h1>{{ brand.name }}</h1>
+            <a href="/brand/{{ brand.id }}/">more</a>
+        {% endfor %}
+    </div>
+</body>
+</html>
