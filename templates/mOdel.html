@@ -1,34 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Detail View</title>
-</head>
-<body>
-    <style type="text/css">
-        .post_block {
+{% extends 'main.html' %}
 
-        }
-        .post_block h1 {
-            text-align: center;
-            color: #242b2e;
-        }
-        .post_block h5 {
-            text-align: center;
-            color: #242b2e;
-        }
-    </style>
-    <div class="model">
-        {% for i in models %}
-            <div class="model_block">
-                <h1>{{ i.name }}</h1>
-                <h1>{{ i.engine }}</h1>
-                <h1>{{ i.hp }}</h1>
-                <h1>{{ i.nm }}</h1>
-            </div>
-        {% endfor %}
+{% block models %}
+    <div style="display: flex; justify-content: space-between">
+    {% for model in models %}
+        <div style="text-align: center; height: 150px; width: 300px;">
+            <img src="{{ model.image.url }}" alt="" style="width: 200px">
+            <h5>{{ model.name }}</h5>
+            <p>{{ model.engine }}</p>
+            <p>{{ model.hp }}</p>
+            <p>{{ model.nm }}</p>
+            <p>{{ model.model }}</p>
+            <a href="model/{{ model.id }}">Series</a>
+        </div>
+    {% endfor %}
+</div>
 
-    </div>
-
-</body>
-</html>
+{% endblock %}

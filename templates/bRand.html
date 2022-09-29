@@ -1,28 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Detail View</title>
-</head>
-<body>
-    <style type="text/css">
-        .post_block {
+{% extends 'main.html' %}
 
-        }
-        .post_block h1 {
-            text-align: center;
-            color: #242b2e;
-        }
-        .post_block h5 {
-            text-align: center;
-            color: #242b2e;
-        }
-    </style>
-    <div class="brand">
-        {% for brand in brands %}
-            <h1>{{ brand.name }}</h1>
-            <a href="/brand/{{ brand.id }}/">more</a>
-        {% endfor %}
+{% block brands %}
+    <div style="display: flex; justify-content: space-between">
+    {% for brand in brands %}
+        <div style="text-align: center; height: 150px; width: 300px;">
+            <img src="{{brand.image.url}}" alt="" style="width: 200px">
+            <h5>{{ brand.name }}</h5>
+            <a href="/brand/{{ brand.id }}/">More</a>
+        </div>
+    {% endfor %}
     </div>
-</body>
-</html>
+
+{% endblock %}

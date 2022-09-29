@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block series %}
+    <div style="display: flex; justify-content: space-between">
+    {% for i in series %}
+        <div style="text-align: center; height: 150px; width: 300px;">
+            <img src="{{ series.image.url }}" alt="" style="width: 200px">
+            <h5>{{ i.s_name }}</h5>
+            <p>{{ i.engine_s }}</p>
+            <p>{{ i.hp_s }}</p>
+            <p>{{ i.nm_s }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -16,14 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from brands.views import brand
-from models.views import model
+from models.views import model, series
+from django.conf import settings
+from django.conf.urls.static import static
 
-urlpatterns = [
+urlpatterns = ([
     path('admin/', admin.site.urls),
     path('', brand),
-    path('brand/<int:brand_id>/', model)
-
-]
+    path('brand/<int:brand_id>/', model),
+    path('brand/<int:brand_id>/model/<int:model_id>/', series)
+]) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 

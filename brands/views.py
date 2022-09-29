@@ -8,6 +8,6 @@ def brand(request):
     models = Model.objects.all()
     data = {
         'brands': brands,
-        'modeels': models
+        'models': models
     }
     return render(request, 'bRand.html', context=data)
