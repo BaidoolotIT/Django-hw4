@@ -1,6 +1,5 @@
 from django.db import models
 from brands.models import Brand
-# Create your models here.
 
 #создал модельки
 class Model(models.Model):
